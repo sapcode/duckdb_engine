@@ -53,6 +53,10 @@ class DuckDBInspector(PGInspector):
             raise NotImplementedError() from e
 
 
+PG_GET_CONSTRAINTDEF = "pg_get_constraintdef(cons.oid)"
+PG_GET_CONSTRAINTDEF_NEW = "pg_get_constraintdef(cons.oid, true)"
+
+
 class ConnectionWrapper:
     c: duckdb.DuckDBPyConnection
     notices: List[str]
@@ -107,6 +111,7 @@ class ConnectionWrapper:
     def execute(
         self, statement: str, parameters: Tuple = None, context: Any = None
     ) -> None:
+        statement = statement.replace(PG_GET_CONSTRAINTDEF, PG_GET_CONSTRAINTDEF_NEW)
         try:
             if statement.lower() == "commit":  # this is largely for ipython-sql
                 self.c.commit()
@@ -141,7 +146,7 @@ class Dialect(PGDialect_psycopg2):
     supports_statement_cache = False
     supports_comments = False
     supports_sane_rowcount = False
-    inspector = DuckDBInspector
+    #    inspector = DuckDBInspector
     # colspecs TODO: remap types to duckdb types
     colspecs = util.update_copy(
         PGDialect_psycopg2.colspecs,
