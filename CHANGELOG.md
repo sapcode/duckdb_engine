@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.6.8](https://github.com/Mause/duckdb_engine/compare/v0.6.7...v0.6.8) (2023-01-08)
+
+
+### Bug Fixes
+
+* correct json type mapping ([7bf8753](https://github.com/Mause/duckdb_engine/commit/7bf8753f79aac22e2e133fd1b916950c32b0facf))
+
+## [0.6.7](https://github.com/Mause/duckdb_engine/compare/v0.6.6...v0.6.7) (2023-01-07)
+
+
+### Bug Fixes
+
+* correct attribute reference ([d2a2577](https://github.com/Mause/duckdb_engine/commit/d2a2577cded6e6e9282efab5370b15bbe4423a40))
+
+## [0.6.6](https://github.com/Mause/duckdb_engine/compare/v0.6.5...v0.6.6) (2022-12-17)
+
+
+### Bug Fixes
+
+* add missing data types ([92cef1b](https://github.com/Mause/duckdb_engine/commit/92cef1bf8f7fb12786675c450f8d134f9ed9104b))
+* add missing integer data types ([c7e9ccf](https://github.com/Mause/duckdb_engine/commit/c7e9ccf70a3f6baeca40909e18dfc628fa2401b1))
+* disable server side cursors ([bae0a1c](https://github.com/Mause/duckdb_engine/commit/bae0a1c23879fac3d6bf910979a2923531128f83))
+
 ## [0.6.5](https://github.com/Mause/duckdb_engine/compare/v0.6.4...v0.6.5) (2022-11-22)
 
 
